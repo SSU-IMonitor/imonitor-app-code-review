@@ -1,5 +1,3 @@
-# imonitor-app 코드 리뷰
-
 ## LoginViewController
 
 - ### loginViewModel = LoginViewModel()
