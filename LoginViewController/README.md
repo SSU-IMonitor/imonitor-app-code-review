@@ -128,6 +128,30 @@
 
 <br>
 
+- ### rxLogin()
+
+  ```swift
+  // becomeFirstResponder(): 특정뷰를 띄우면서 바로 특정 필드를 편집하고 싶을 때(= 키보드를 띄우고 싶은 위치에) 사용.
+  idTextField.becomeFirstResponder()
+  ```
+
+  - ##### $0: 첫번 째 방출될(?) 값. 
+
+    ex) print("\%0").disposed(by: disposeBag)을 두번 실행하면 값이 두번 방출됨.
+
+  ```swift
+  // signinButton이 눌릴 때 까지 텍스트에 대해  isValid() 함수를 호출하여 조건 체크
+  // bind: 여러개가 동시에 하나를 참조
+  loginViewModel.isValid().bind(to: signinButton.rx.isEnabled).disposed(by: disposeBag)
+  
+  // map: 이벤트를 바꾼다
+  loginViewModel.isValid().map{ $0 ? 1 : 0.1}.bind(to: signinButton.rx.alpha).disposed(by: disposeBag)
+  ```
+
+
+
+</br>
+
 
 
 - #### LoginInfo / User Info 생성
